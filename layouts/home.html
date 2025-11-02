@@ -1,3 +1,7 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
+    <article>
+        <header>
+            {{ .Render "personal-details" }}
+        </header>
+    </article>
 {{ end }}
