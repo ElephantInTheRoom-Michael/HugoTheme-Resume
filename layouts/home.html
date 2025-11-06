@@ -6,26 +6,6 @@
         {{ .Content }}
     </article>
     {{ range .Site.Sections }}
-        <article>
-            <h1>{{ .Title }}</h1>
-            {{ range .Sections }}
-                <section>
-                    <header>
-                        <h1>{{ .Title }}</h1>
-                        {{ with .Params.location }}
-                            <h2>{{ . }}</h2>
-                        {{ end }}
-                    </header>
-                    {{ range .RegularPages }}
-                        <header>
-                            <h1>{{ .Title }}</h1>
-                            {{ with .Params.location }}
-                                <h2>{{ . }}</h2>
-                            {{ end }}
-                        </header>
-                    {{ end }}
-                </section>
-            {{ end }}
-        </article>
+        {{ partial "top-section.html" . }}
     {{ end }}
 {{ end }}

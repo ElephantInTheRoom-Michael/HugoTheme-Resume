@@ -1,0 +1,11 @@
+<section>
+    <header>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.location }}
+            <h2>{{ . }}</h2>
+        {{ end }}
+    </header>
+    {{ range .RegularPages }}
+        {{ partial "page.html" . }}
+    {{ end }}
+</section>
