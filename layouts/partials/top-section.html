@@ -1,0 +1,6 @@
+<article>
+    <h1>{{ .Title }}</h1>
+    {{ range .Sections }}
+        {{ partial "inner-section.html" . }}
+    {{ end }}
+</article>

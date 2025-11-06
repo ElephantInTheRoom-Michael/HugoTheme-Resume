@@ -5,4 +5,7 @@
         </header>
         {{ .Content }}
     </article>
+    {{ range .Site.Sections }}
+        {{ partial "top-section.html" . }}
+    {{ end }}
 {{ end }}
