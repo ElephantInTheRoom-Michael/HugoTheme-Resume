@@ -21,7 +21,6 @@ article {
   &:first-of-type {
     --background-color: black;
     color: white;
-
   }
 
   &:not(:first-of-type) {
@@ -49,5 +48,11 @@ article {
     right: -(calc($page-margin + $border-size));
     background-color: var(--background-color);
     content: "";
+  }
+}
+
+time + time {
+  &::before {
+    content: " - ";
   }
 }

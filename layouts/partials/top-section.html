@@ -1,5 +1,6 @@
 <article>
     <h1>{{ .Title }}</h1>
+    {{ .Render "content-details" }}
     {{ range .Sections }}
         {{ partial "inner-section.html" . }}
     {{ end }}

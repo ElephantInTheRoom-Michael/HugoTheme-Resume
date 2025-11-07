@@ -1,8 +1,6 @@
 <section>
     <header>
         <h1>{{ .Title }}</h1>
-        {{ with .Params.location }}
-            <h2>{{ . }}</h2>
-        {{ end }}
+        {{ .Render "content-details" }}
     </header>
 </section>
