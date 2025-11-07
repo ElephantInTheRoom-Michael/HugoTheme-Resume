@@ -3,7 +3,9 @@
         <header>
             {{ .Render "personal-details" }}
         </header>
-        {{ .Content }}
+        <section>
+            {{ .Content }}
+        </section>
     </article>
     {{ range .Site.Sections }}
         {{ partial "top-section.html" . }}

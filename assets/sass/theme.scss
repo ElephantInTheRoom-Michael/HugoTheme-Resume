@@ -1,0 +1,53 @@
+$page-margin: 0.5in;
+$spacing: 0.2in;
+$border-size: 1px;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  position: relative;
+  margin: $spacing $page-margin;
+  border: $border-size solid red;
+  padding: $spacing;
+
+  &:first-of-type {
+    --background-color: black;
+    color: white;
+
+  }
+
+  &:not(:first-of-type) {
+    --background-color: gray;
+
+    section {
+      margin: $spacing 0;
+      border: $border-size solid blue;
+      padding: $spacing 0;
+
+      section {
+        margin: $spacing 0;
+        border: $border-size solid orange;
+        padding: $spacing 0;
+      }
+    }
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: -(calc($spacing + $border-size));
+    bottom: -(calc($spacing + $border-size));
+    left: -(calc($page-margin + $border-size));
+    right: -(calc($page-margin + $border-size));
+    background-color: var(--background-color);
+    content: "";
+  }
+}
