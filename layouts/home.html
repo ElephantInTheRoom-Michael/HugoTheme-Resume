@@ -1,5 +1,9 @@
+{{ define "head" }}
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+{{ end }}
+
 {{ define "main" }}
-    <article>
+    <article class="full-page-width-color">
         <header>
             {{ .Render "personal-details" }}
         </header>
