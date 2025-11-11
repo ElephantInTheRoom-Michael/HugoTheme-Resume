@@ -56,3 +56,10 @@ time + time {
     content: " - ";
   }
 }
+
+@media print {
+  @page {
+    size: letter;
+    margin: $page-margin 0;
+  }
+}
