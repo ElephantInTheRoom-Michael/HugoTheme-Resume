@@ -4,6 +4,7 @@ $border-size: 1px;
 
 body {
   margin: 0;
+  background-color: lightgray;
   padding: 0;
 }
 
@@ -16,16 +17,15 @@ article {
   position: relative;
   margin: $spacing $page-margin;
   border: $border-size solid red;
+  background-color: gray;
   padding: $spacing;
 
   &:first-of-type {
-    --background-color: black;
+    background-color: black;
     color: white;
   }
 
   &:not(:first-of-type) {
-    --background-color: gray;
-
     section {
       margin: $spacing 0;
       border: $border-size solid blue;
@@ -39,14 +39,14 @@ article {
     }
   }
 
-  &::before {
+  &.full-page-width-color::before {
     position: absolute;
     z-index: -1;
     top: -(calc($spacing + $border-size));
     bottom: -(calc($spacing + $border-size));
     left: -(calc($page-margin + $border-size));
     right: -(calc($page-margin + $border-size));
-    background-color: var(--background-color);
+    background-color: black;
     content: "";
   }
 }
@@ -54,5 +54,12 @@ article {
 time + time {
   &::before {
     content: " - ";
+  }
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: $page-margin 0;
   }
 }
