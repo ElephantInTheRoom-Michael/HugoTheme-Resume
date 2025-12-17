@@ -4,3 +4,5 @@ github.com/ElephantInTheRoom-Michael/HugoTheme-Base v0.0.0-20251101213716-c39a54
 github.com/ElephantInTheRoom-Michael/HugoTheme-Base v0.0.0-20251101213716-c39a549645c8/go.mod h1:ppo9UER4Eswd5r02c1sEHssblREwgjZ17vmSyw/KX1Q=
 github.com/ElephantInTheRoom-Michael/HugoTheme-Base v0.0.0-20251106224301-08bfb0b24685 h1:12WsFbr2gv2MUyNB5ojz41WgqfBPVv3VGzQV+zN9v+4=
 github.com/ElephantInTheRoom-Michael/HugoTheme-Base v0.0.0-20251106224301-08bfb0b24685/go.mod h1:ppo9UER4Eswd5r02c1sEHssblREwgjZ17vmSyw/KX1Q=
+github.com/ElephantInTheRoom-Michael/HugoTheme-Printed v0.0.0-20251111225834-17bf679d5925 h1:B+I3/GE5OWzn3ozQb98bsNCvG/IBzM1LGAzGWsCriNY=
+github.com/ElephantInTheRoom-Michael/HugoTheme-Printed v0.0.0-20251111225834-17bf679d5925/go.mod h1:jMQ5grKqNKGiqDdpmiCKZw0LTx11KN3QnOgSBQ5nU+c=
