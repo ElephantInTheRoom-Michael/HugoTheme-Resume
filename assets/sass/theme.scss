@@ -2,6 +2,8 @@ $page-margin: 0.5in;
 $spacing: 0.2in;
 $border-size: 1px;
 
+@use "printed";
+
 body {
   margin: 0;
   background-color: lightgray;
@@ -14,18 +16,16 @@ main {
 }
 
 article {
-  position: relative;
   margin: $spacing $page-margin;
   border: $border-size solid red;
-  background-color: gray;
+  --background-color: gray;
   padding: $spacing;
 
-  &:first-of-type {
-    background-color: black;
-    color: white;
+  &.filled-top-of-page {
+    --background-color: black;
   }
 
-  &:not(:first-of-type) {
+  &:not(.filled-top-of-page) {
     section {
       margin: $spacing 0;
       border: $border-size solid blue;
@@ -38,28 +38,10 @@ article {
       }
     }
   }
-
-  &.full-page-width-color::before {
-    position: absolute;
-    z-index: -1;
-    top: -(calc($spacing + $border-size));
-    bottom: -(calc($spacing + $border-size));
-    left: -(calc($page-margin + $border-size));
-    right: -(calc($page-margin + $border-size));
-    background-color: black;
-    content: "";
-  }
 }
 
 time + time {
   &::before {
     content: " - ";
-  }
-}
-
-@media print {
-  @page {
-    size: letter;
-    margin: $page-margin 0;
   }
 }
