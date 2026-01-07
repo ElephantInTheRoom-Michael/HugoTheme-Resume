@@ -39,3 +39,33 @@ article {
     }
   }
 }
+
+header.personal-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "name address"
+    "name location";
+
+  h1 {
+    grid-area: name;
+  }
+
+  address {
+    grid-area: address;
+    font-style: normal;
+    text-align: right;
+    align-self: center;
+  }
+
+  .location {
+    grid-area: location;
+    text-align: right;
+    align-self: center;
+    margin: 0;
+  }
+}
+
+.location {
+  font-style: italic;
+}

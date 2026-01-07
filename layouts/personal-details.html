@@ -1,6 +1,7 @@
-<h1>{{ .Title }}</h1>
-<p class="location">{{ .Params.location }}</p>
-<address>
-    <p class="phone">{{ .Params.phone }}</p>
-    <p class="email">{{ .Params.email }}</p>
-</address>
+<header class="personal-details">
+    <h1>{{ .Title }}</h1>
+    <address>
+        {{ .Params.phone }} | {{ .Params.email }}
+    </address>
+    <p class="location">{{ .Params.location }}</p>
+</header>
