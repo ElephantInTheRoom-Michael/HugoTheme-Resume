@@ -1,7 +1,6 @@
 <section>
     <header>
-        <h1>{{ .Title }}</h1>
-        {{ .Render "content-details" }}
+        <h2>{{ .Title }}</h2>
     </header>
     {{ range .RegularPages }}
         {{ partial "page.html" . }}

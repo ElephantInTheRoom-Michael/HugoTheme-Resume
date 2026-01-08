@@ -69,3 +69,18 @@ header.personal-details {
 .location {
   font-style: italic;
 }
+
+article section section header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .location {
+    margin-left: 1em;
+  }
+
+  .dates {
+    flex-grow: 1;
+    text-align: right;
+  }
+}
