@@ -1,10 +1,12 @@
 {{ with .Params.location }}
-    <h2>{{ . }}</h2>
+    <div class="location">{{ . }}</div>
 {{ end }}
 {{ $start := .Params.start }}
 {{ $finish := .Params.finish }}
 {{ if and $start $finish }}
-    <time datetime="{{ $start }}">{{ time.Format "January 2006" $start }}</time>
-    -
-    <time datetime="{{ $finish }}">{{ time.Format "January 2006" $finish }}</time>
+    <div class="dates">
+        <time datetime="{{ $start }}">{{ time.Format "January 2006" $start }}</time>
+        -
+        <time datetime="{{ $finish }}">{{ time.Format "January 2006" $finish }}</time>
+    </div>
 {{ end }}
