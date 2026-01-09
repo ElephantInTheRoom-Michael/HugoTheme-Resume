@@ -3,10 +3,11 @@ $spacing: 0.2in;
 $border-size: 1px;
 
 @use "printed";
+@use "colors";
 
 body {
   margin: 0;
-  background-color: lightgray;
+  background-color: colors.$background-color;
   padding: 0;
 }
 
@@ -18,16 +19,16 @@ main {
 article {
   margin: $spacing $page-margin;
   border: $border-size solid red;
-  --background-color: gray;
+  background-color: colors.$article-background-color;
   padding: $spacing;
   text-align: justify;
   text-align-last: start;
   text-justify: inter-word;
   hyphens: auto;
+  color: colors.$article-text-color;
 
-  &.filled-top-of-page {
-    --background-color: black;
-  }
+  --edge-to-edge-background-color: #{colors.$dark-article-background-color};
+  --edge-to-edge-text-color: #{colors.$dark-article-text-color};
 
   &:not(.filled-top-of-page) {
     section {
