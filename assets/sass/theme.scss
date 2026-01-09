@@ -20,6 +20,10 @@ article {
   border: $border-size solid red;
   --background-color: gray;
   padding: $spacing;
+  text-align: justify;
+  text-align-last: start;
+  text-justify: inter-word;
+  hyphens: auto;
 
   &.filled-top-of-page {
     --background-color: black;
@@ -54,13 +58,13 @@ header.personal-details {
   address {
     grid-area: address;
     font-style: normal;
-    text-align: right;
+    text-align-last: right;
     align-self: center;
   }
 
   .location {
     grid-area: location;
-    text-align: right;
+    text-align-last: right;
     align-self: center;
     margin: 0;
   }
@@ -81,6 +85,6 @@ article section section header {
 
   .dates {
     flex-grow: 1;
-    text-align: right;
+    text-align-last: right;
   }
 }
