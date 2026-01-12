@@ -75,17 +75,27 @@ header.personal-details {
   font-style: italic;
 }
 
-article section section header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  .location {
-    margin-left: 1em;
+article section {
+  header {
+    @extend .no-page-break-after;
   }
 
-  .dates {
-    flex-grow: 1;
-    text-align-last: right;
-  }
+  section {
+   @extend .no-page-break;
+
+   header {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+
+     .location {
+       margin-left: 1em;
+     }
+
+     .dates {
+       flex-grow: 1;
+       text-align-last: right;
+     }
+   }
+ }
 }
