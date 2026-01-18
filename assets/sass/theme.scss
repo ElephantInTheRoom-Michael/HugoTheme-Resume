@@ -5,22 +5,16 @@ $border-size: 1px;
 @use "colors";
 
 body {
-  margin: 0;
   background-color: colors.$background-color;
-  padding: 0;
 }
 
 p, ul, li {
   margin: calc($spacing / 2) 0;
 }
 
-
-
 article {
-  margin: $spacing 0;
-  border: $border-size solid red;
   background-color: colors.$article-background-color;
-  padding: $spacing;
+
   text-align: justify;
   text-align-last: start;
   text-justify: inter-word;
@@ -30,32 +24,60 @@ article {
   --edge-to-edge-background-color: #{colors.$dark-article-background-color};
   --edge-to-edge-text-color: #{colors.$dark-article-text-color};
 
-  &:not(.filled-top-of-page) {
+  // Spacing and layout rules for nested sections and headers
+  margin: $spacing 0;
+  border: $border-size solid red;
+  padding: 0 $spacing;
+
+  &.filled-top-of-page {
+    padding: $spacing calc($spacing + $border-size);
+
     section {
-      margin: $spacing 0;
-
-      section {
-        margin: $spacing 0;
-
-        header {
-          margin: $spacing 0;
-        }
+      &:last-of-type, :last-child {
+        margin-bottom: 0;
       }
     }
   }
 
-  h1 {
-    margin-block-start: 0;
-    margin-block-end: $spacing;
+  header {
+    h1 {
+      margin-block-start: $spacing;
+      margin-block-end: $spacing;
+    }
   }
 
-  h2 {
-    margin-block-start: $spacing;
-  }
+  section {
+    margin: $spacing 0;
 
-  h3 {
-    margin-block-start: 0;
-    margin-block-end: 0;
+    header {
+      @extend .no-page-break-after;
+
+      h2 {
+        margin-block-start: $spacing;
+        margin-block-end: $spacing;
+      }
+    }
+
+    section {
+      @extend .no-page-break;
+
+      margin: $spacing 0;
+
+      header {
+        margin: $spacing 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        // This h3 is in a flex row with other content so the margin which won't be collapsed.
+        // Remove the margin and let it be handled by parent header.
+        h3 {
+          margin-block-start: 0;
+          margin-block-end: 0;
+        }
+      }
+    }
   }
 }
 
@@ -69,6 +91,8 @@ header.personal-details {
   h1 {
     grid-area: name;
     font-size: 2.5em;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 
   address {
@@ -88,29 +112,10 @@ header.personal-details {
 
 .location {
   font-style: italic;
+  margin-left: 1em;
 }
 
-article section {
-  header {
-    @extend .no-page-break-after;
-  }
-
-  section {
-   @extend .no-page-break;
-
-   header {
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-
-     .location {
-       margin-left: 1em;
-     }
-
-     .dates {
-       flex-grow: 1;
-       text-align-last: right;
-     }
-   }
- }
+.dates {
+  flex-grow: 1;
+  text-align-last: right;
 }
