@@ -3,6 +3,7 @@ $border-size: 1px;
 
 @use "printed";
 @use "colors";
+@use "font";
 
 body {
   background-color: colors.$background-color;
