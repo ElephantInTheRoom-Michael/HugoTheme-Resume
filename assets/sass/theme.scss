@@ -1,4 +1,5 @@
 $spacing: 0.2in;
+$inner-spacing: 0.12in;
 $border-size: 1px;
 
 @use "printed";
@@ -7,10 +8,11 @@ $border-size: 1px;
 
 body {
   background-color: colors.$background-color;
+  font-size: 11pt;
 }
 
 p, ul, li {
-  margin: calc($spacing / 2) 0;
+  margin: calc($inner-spacing / 2) 0;
 }
 
 article {
@@ -31,7 +33,7 @@ article {
   padding: 0 $spacing;
 
   &.filled-top-of-page {
-    padding: $spacing calc($spacing + $border-size);
+    padding: calc($spacing + $inner-spacing) calc($spacing + $border-size);
 
     section {
       &:last-of-type, :last-child {
@@ -42,8 +44,8 @@ article {
 
   header {
     h1 {
-      margin-block-start: $spacing;
-      margin-block-end: $spacing;
+      margin-block-start: $inner-spacing;
+      margin-block-end: $inner-spacing;
     }
   }
 
@@ -54,8 +56,8 @@ article {
       @extend .no-page-break-after;
 
       h2 {
-        margin-block-start: $spacing;
-        margin-block-end: $spacing;
+        margin-block-start: $inner-spacing;
+        margin-block-end: $inner-spacing;
       }
     }
 
@@ -65,7 +67,7 @@ article {
       margin: $spacing 0;
 
       header {
-        margin: $spacing 0;
+        margin: $inner-spacing 0;
 
         display: flex;
         flex-direction: row;
