@@ -33,7 +33,7 @@ article {
 
   // Spacing and layout rules for nested sections and headers
   margin: $spacing 0;
-  border: $border-size solid red;
+  border: $border-size solid colors.$border-color;
   padding: 0 $spacing;
 
   &.filled-top-of-page {
