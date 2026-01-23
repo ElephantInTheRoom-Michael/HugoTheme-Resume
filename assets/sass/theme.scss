@@ -15,6 +15,10 @@ p, ul, li {
   margin: calc($inner-spacing / 2) 0;
 }
 
+ul {
+  padding-inline-start: 1.5em;
+}
+
 article {
   background-color: colors.$article-background-color;
 
@@ -44,13 +48,13 @@ article {
 
   header {
     h1 {
-      margin-block-start: $inner-spacing;
+      margin-block-start: $spacing;
       margin-block-end: $inner-spacing;
     }
   }
 
   section {
-    margin: $spacing 0;
+    margin-block-end: $spacing;
 
     header {
       @extend .no-page-break-after;
@@ -64,7 +68,7 @@ article {
     section {
       @extend .no-page-break;
 
-      margin: $spacing 0;
+      margin-block-end: $spacing;
 
       header {
         margin: $inner-spacing 0;
