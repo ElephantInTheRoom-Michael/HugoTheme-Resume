@@ -75,7 +75,7 @@ article {
 
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: baseline;
 
         // This h3 is in a flex row with other content so the margin which won't be collapsed.
         // Remove the margin and let it be handled by parent header.
